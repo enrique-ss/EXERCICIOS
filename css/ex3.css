@@ -1,0 +1,16 @@
+.card p {
+    padding: 2vh;
+    font-size: 1.8vh;
+    line-height: 1.5;
+}
+
+.card a {
+    display: inline-block;
+    background: #E30613;
+    padding: 1vh 4vh;
+    border-radius: .8vh;
+}
+
+.card a:hover {
+    background-color: #B30000;
+}

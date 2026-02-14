@@ -25,6 +25,7 @@ h1 {
 
 h2 {
     color: #E30613;
+    text-shadow: black 1px 1px 1px;
     font-size: 3vh;
     font-weight: 300;
     text-transform: uppercase;
@@ -96,7 +97,7 @@ nav a.active {
     border-bottom: 1px solid #E30613;
 }
 
-/* Cards */
+/* Cards - usado em ex3 e ex4 */
 .card {
     display: inline-block;
     max-width: 44vh;
@@ -124,10 +125,6 @@ nav a.active {
     padding: 2vh;
 }
 
-.card-content p {
-    padding: 3vh;
-}
-
 #card-destaque {
     border-width: .3vh;
     background: linear-gradient(135deg, #2a0a0a, #1a0505);
@@ -138,12 +135,13 @@ nav a.active {
     transform: scale(1.05) translateY(-1.2vh);
 }
 
-/* Botões e links de ação */
+/* Botões e links - usado em ex3 e ex4 */
 .card a,
 .btn-comprar {
     display: inline-block;
     background: linear-gradient(135deg, #E30613, #B30000);
     padding: 1.5vh 4vh;
+    color: #CCC;
     border-radius: .8vh;
     font-weight: 900;
     transition: background .3s ease;
