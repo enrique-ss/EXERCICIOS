@@ -1,24 +1,125 @@
+@font-face {
+    font-family: 'p5';
+    src: url('p5.ttf');
+}
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000 repeating-linear-gradient(45deg, #000, #000 10px, rgba(227, 6, 19, .05) 10px, rgba(227, 6, 19, .05) 20px);
+    color: #CCC;
+    text-align: center;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #1a0000, #000);
+    border-bottom: 1px solid #E30613;
+    padding: 2vh 4vw;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(227, 6, 19, .3);
+}
+
+nav a {
+    color: #CCC;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1vh 2vw;
+    transition: all .3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: #E30613;
+    border-bottom: 1px solid #E30613;
+}
+
+main {
+    min-height: 80vh;
+    padding: 2rem 2%;
+}
+
+h1 {
+    font-family: 'p5', sans-serif;
+    color: #E30613;
+    font-size: 10vh;
+    text-transform: uppercase;
+    margin-top: 12vh;
+}
+
+h2 {
+    color: #E30613;
+    text-shadow: black 1px 1px 1px;
+    font-size: 3vh;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+hr {
+    width: 40%;
+    height: 4px;
+    border: 0;
+    background: linear-gradient(90deg, transparent, #E30613, transparent);
+    margin: 2.5vh auto;
+}
+
+.card {
+    display: inline-block;
+    max-width: 44vh;
+    min-width: 32vh;
+    background: linear-gradient(135deg, #ff070744, #0f0f0f);
+    border: 2px solid #E30613;
+    border-radius: 8px;
+    margin: 2vh;
+    box-shadow: 0 8px 32px rgba(227, 6, 19, .3);
+    transition: transform .4s ease;
+    vertical-align: top;
+}
+
+.card:hover {
+    transform: translateY(-1.2vh);
+}
+
+.card img {
+    width: 100%;
+    height: 24vh;
+    object-fit: cover;
+}
+
 .card-content {
     padding: 1.5vh;
     text-align: left;
 }
 
 .patrocinado {
-    font-size: 2vh;
-    color: #999;
     margin: 1vh 0 1vh 1.5vh;
     text-align: left;
+    font-size: 2vh;
+    color: #999;
 }
 
 .card-content h2 {
-    font-size: 2.4vh;
     font-weight: 900;
     line-height: 1.3;
     margin-bottom: 1vh;
 }
 
-.preco {
-    font-size: 2.2vh;
+.preco,
+.preco sup,
+.preco-antigo,
+.parcelamento,
+.entrega,
+.estoque,
+.vendedor {
+    font-size: 2vh;
     margin-bottom: 1vh;
 }
 
@@ -28,22 +129,18 @@
 }
 
 .preco sup {
-    font-size: 2.2vh;
     vertical-align: super;
 }
 
 .preco-antigo {
-    color: #999;
-    font-size: 2.2vh;
     text-decoration: line-through;
-    margin-left: .6vh;
+    margin-left: 6px;
 }
 
-.parcelamento,
-.entrega,
-.estoque {
-    font-size: 2vh;
-    margin-bottom: 1vh;
+.patrocinado,
+.preco-antigo,
+.vendedor {
+    color: #999;
 }
 
 .entrega strong {
@@ -55,12 +152,31 @@
     color: #FF6B6B;
 }
 
-.vendedor {
-    font-size: 1.9vh;
-    color: #999;
-    margin-bottom: 1vh;
+.btn-comprar {
+    display: inline-block;
+    width: 100%;
+    background: linear-gradient(135deg, #E30613, #B30000);
+    padding: 1.5vh;
+    color: #CCC;
+    border-radius: .8vh;
+    font-weight: 900;
+    transition: background .3s ease;
+    cursor: pointer;
+    border: none;
+    margin-top: 1vh;
+    text-transform: uppercase;
+    text-align: center;
 }
 
-.btn-comprar {
-    margin-top: 1vh;
+.btn-comprar:hover {
+    background: linear-gradient(135deg, #FF0000, #E30613);
+}
+
+footer {
+    background: linear-gradient(135deg, #1a0000, #000);
+    border-top: 1px solid #E30613;
+    padding: 3vh 4%;
+    text-align: center;
+    color: #999;
+    font-size: 0.9rem;
 }

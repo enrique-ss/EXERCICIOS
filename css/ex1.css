@@ -1,10 +1,66 @@
-.profile-container {
+@font-face {
+    font-family: 'p5';
+    src: url('p5.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000 repeating-linear-gradient(45deg, #000, #000 10px, rgba(227, 6, 19, .05) 10px, rgba(227, 6, 19, .05) 20px);
+    color: #CCC;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.profile-img {
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #1a0000, #000);
+    border-bottom: 1px solid #E30613;
+    padding: 2vh 4vw;
+    z-index: 1000;
+    box-shadow: 0 .4vh 2vh rgba(227, 6, 19, .3);
+}
+
+nav a {
+    color: #CCC;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1vh 2vw;
+    transition: all .3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: #E30613;
+    border-bottom: 1px solid #E30613;
+}
+
+h1 {
+    font-family: 'p5', sans-serif;
+    color: #E30613;
+    font-size: 10vh;
+    text-transform: uppercase;
+    margin-top: 12vh;
+}
+
+h2 {
+    color: #E30613;
+    text-shadow: black 1px 1px 1px;
+    font-size: 3vh;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+img {
     height: 32vh;
     border-radius: 50%;
     border: .7vh solid #E30613;
@@ -12,6 +68,25 @@
     margin: 4vh 0;
 }
 
-.profile-img:hover {
+img:hover {
     content: url(/img/joker.jpg);
+}
+
+p {
+    font-size: 2.5vh;
+    max-width: 75vw;
+    margin: 2vh auto;
+}
+
+hr {
+    width: 40vw;
+    height: .4vh;
+    border: 0;
+    background: linear-gradient(90deg, transparent, #E30613, transparent);
+    margin: 2.5vh auto;
+}
+
+b {
+    color: #E30613;
+    text-shadow: black 1px 1px 1px;
 }
