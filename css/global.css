@@ -97,6 +97,10 @@ nav a.active {
     border-bottom: 1px solid #E30613;
 }
 
+b {
+    color: #E30613;
+    text-shadow: black 1px 1px 1px;
+}
 /* Cards - usado em ex3 e ex4 */
 .card {
     display: inline-block;
