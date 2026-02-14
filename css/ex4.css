@@ -98,14 +98,23 @@ main {
     text-align: left;
 }
 
+.parcelamento,
+.vendedor,
+.entrega,
+.estoque {
+    margin: 1vh 0;
+}
+
 .patrocinado {
     margin: 1vh 0 1vh 1.5vh;
     font-size: 0.8rem;
-    color: #999;
 }
 
-.parcelamento {
-    margin: 0vh 0 1vh;
+.patrocinado,
+.preco-antigo,
+.vendedor,
+footer {
+    color: #999;
 }
 
 .card-content h2 {
@@ -114,14 +123,17 @@ main {
     margin-bottom: 1vh;
 }
 
-.preco .valor {
+.preco .valor,
+.preco sup {
     color: #00A650;
+}
+
+.preco .valor {
     font-size: 2.5rem;
     font-weight: 600;
 }
 
 .preco sup {
-    color: #00A650;
     vertical-align: super;
     font-size: 0.9rem;
 }
@@ -129,26 +141,14 @@ main {
 .preco-antigo {
     text-decoration: line-through;
     margin-left: 6px;
-    color: #999;
-}
-
-.vendedor {
-    color: #999;
-    margin: 1vh 0vh;
-}
-
-.entrega {
-    margin: 1vh 0vh 1vh;
 }
 
 .entrega strong {
     font-weight: 600;
-    margin: 1vh 0vh 1vh;
 }
 
 .estoque {
     color: #FF6B6B;
-    margin: 1vh 0vh;
 }
 
 .btn-comprar {
@@ -173,6 +173,5 @@ footer {
     background: linear-gradient(135deg, #1a0000, #000);
     border-top: 1px solid #E30613;
     padding: 3vh 4%;
-    color: #999;
     font-size: 0.9rem;
 }
