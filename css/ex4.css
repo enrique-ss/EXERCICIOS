@@ -1,4 +1,3 @@
-/* Sobrescreve o padding e alinhamento do card-content */
 .card-content {
     padding: 1.5vh;
     text-align: left;
@@ -8,8 +7,6 @@
     font-size: 2vh;
     color: #999;
     margin: 1vh 0 1vh 1.5vh;
-    font-weight: 400;
-    display: block;
     text-align: left;
 }
 
@@ -21,9 +18,7 @@
 }
 
 .preco {
-    color: #E30613;
     font-size: 2.2vh;
-    font-weight: 400;
     margin-bottom: 1vh;
 }
 
@@ -41,21 +36,14 @@
     color: #999;
     font-size: 2.2vh;
     text-decoration: line-through;
-    font-weight: 400;
     margin-left: .6vh;
 }
 
-.parcelamento {
-    font-size: 2vh;
-    line-height: 1.4;
-    margin-bottom: 1vh;
-    color: #CCC;
-}
-
-.entrega {
+.parcelamento,
+.entrega,
+.estoque {
     font-size: 2vh;
     margin-bottom: 1vh;
-    color: #CCC;
 }
 
 .entrega strong {
@@ -65,18 +53,12 @@
 
 .estoque {
     color: #FF6B6B;
-    font-size: 2vh;
-    font-weight: 400;
-    margin-bottom: 1vh;
 }
 
 .vendedor {
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin-bottom: 1vh;
     font-size: 1.9vh;
     color: #999;
+    margin-bottom: 1vh;
 }
 
 .btn-comprar {
