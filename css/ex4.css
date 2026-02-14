@@ -1,0 +1,36 @@
+.card-content h2 {
+    font-size: 2vh;
+    margin-bottom: 1.5vh;
+}
+
+.preco {
+    color: #E30613;
+    font-size: 1.8vh;
+    font-weight: 900;
+}
+
+.preco .valor {
+    font-size: 3.5vh;
+}
+
+.preco-antigo {
+    color: #666;
+    text-decoration: line-through;
+    margin-left: .8vh;
+}
+
+.parcelamento,
+.entrega,
+.estoque {
+    font-size: 1.5vh;
+    margin: 1vh 0;
+}
+
+.vendedor {
+    background: rgba(227, 6, 19, .1);
+    border: .1vh solid rgba(227, 6, 19, .3);
+    border-radius: .6vh;
+    padding: 1.2vh;
+    margin: 1.5vh 0;
+    font-size: 1.4vh;
+}

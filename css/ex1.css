@@ -1,0 +1,17 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-img {
+    height: 32vh;
+    border-radius: 50%;
+    border: .7vh solid #E30613;
+    box-shadow: 0 0 3vh rgba(227, 6, 19, .6), 0 .8vh 3vh #000;
+    margin: 4vh 0;
+}
+
+.profile-img:hover {
+    content: url(/img/joker.jpg);
+}
