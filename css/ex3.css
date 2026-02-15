@@ -25,6 +25,28 @@ header {
     padding: 2vh 4vw;
     z-index: 1000;
     box-shadow: 0 .4vh 2vh rgba(227, 6, 19, .3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-button {
+    color: #CCC;
+    text-decoration: none;
+    padding: 1vh 2vw;
+    transition: all .3s ease;
+    font-size: 2vh;
+}
+
+.back-button:hover {
+    color: #E30613;
+    border-bottom: 1px solid #E30613;
+}
+
+nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 nav a {
@@ -151,7 +173,8 @@ hr {
 
 #card-destaque a {
     background: linear-gradient(135deg, #FFD700, #B8860B);
-    color: #FFF;}
+    color: #FFF;
+}
 
 #card-destaque a:hover {
     background: linear-gradient(135deg, #FFF, #FFD700);
