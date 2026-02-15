@@ -10,8 +10,7 @@
 }
 
 body {
-    background: #000 repeating-linear-gradient(45deg, #000, #000 10px, rgba(227, 6, 19, .05) 10px, rgba(227, 6, 19, .05) 20px);
-    color: #CCC;
+    background: #000 repeating-linear-gradient(45deg, #000, #000 10px, rgba(227, 6, 21, 0.089) 10px, rgba(227, 6, 19, .05) 20px);    color: #CCC;
     text-align: center;
 }
 
