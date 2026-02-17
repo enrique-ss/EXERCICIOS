@@ -26,54 +26,6 @@ textarea {
     cursor: url('/img/link.png'), pointer;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(135deg, #1a0000, #000);
-    border-bottom: 1px solid #E30613;
-    padding: 2vh 4vw;
-    z-index: 1000;
-    box-shadow: 0 .4vh 2vh rgba(227, 6, 19, .3);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.back-button {
-    color: #CCC;
-    text-decoration: none;
-    padding: 1vh 2vw;
-    transition: all .3s ease;
-    font-size: 2vh;
-}
-
-.back-button:hover {
-    color: #E30613;
-    border-bottom: 1px solid #E30613;
-}
-
-nav {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-nav a {
-    color: #CCC;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 1vh 2vw;
-    transition: all .3s ease;
-}
-
-nav a:hover,
-nav a.active {
-    color: #E30613;
-    border-bottom: 1px solid #E30613;
-}
-
 h1 {
     font-family: 'p5', sans-serif;
     color: #E30613;
