@@ -61,7 +61,7 @@ Object.assign(musicHint.style, {
     position: 'fixed',
     pointerEvents: 'none',
     zIndex: '9999',
-    color: '#ffffff',
+    color: '#E30613',
     fontSize: '4rem',
     fontFamily: "'p5', 'Impact', sans-serif",
     textTransform: 'uppercase',
