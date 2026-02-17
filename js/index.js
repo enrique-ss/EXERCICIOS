@@ -41,16 +41,13 @@ function updateCover() {
     backgroundMesh.scale.set(meshW, meshH, 1);
 }
 
-// Vídeo carregou normalmente
 video.onloadedmetadata = () => { updateCover(); video.play(); };
-
-// Vídeo deu erro (arquivo ausente, formato não suportado, etc.)
 video.onerror = () => { revealMenu(); };
 
-// Se o vídeo já estava em cache e já tem dados
+// Vídeo já estava em cache
 if (video.readyState >= 1) { updateCover(); video.play().catch(() => { }); }
 
-// Fallback de segurança: se após 2s o menu ainda não apareceu, mostra mesmo assim
+// Garante que o menu aparece mesmo se o vídeo travar
 setTimeout(() => { revealMenu(); }, 2000);
 
 // --- Áudio ---
@@ -58,7 +55,6 @@ const bgAudio = new Audio('/resources/last.mp3');
 bgAudio.loop = true;
 bgAudio.volume = 0.6;
 
-// Dica de música seguindo o cursor
 const musicHint = document.createElement('div');
 musicHint.textContent = 'Ativar Música';
 Object.assign(musicHint.style, {
@@ -93,10 +89,9 @@ function playAudio() {
         .catch(() => { });
 }
 
-// Tenta tocar imediatamente
 playAudio();
 
-// Se o browser bloqueou, mostra a dica e aguarda interação
+// Browsers bloqueiam autoplay sem interação, por isso pede o click
 bgAudio.play().catch(() => {
     gsap.to(musicHint, { opacity: 1, duration: 0.5, delay: 0.5 });
 });
@@ -105,6 +100,7 @@ bgAudio.play().catch(() => {
     document.addEventListener(evt, () => { playAudio(); }, { once: true });
 });
 
+// --- Mouse ---
 window.addEventListener('mousemove', (e) => {
     const x = (e.clientX / window.innerWidth) - 0.5;
     const y = (e.clientY / window.innerHeight) - 0.5;
@@ -125,13 +121,12 @@ window.addEventListener('mousemove', (e) => {
     });
 
     document.querySelectorAll('.menu-item').forEach(item => {
-        const shiftX = x * -50;
-        const shiftY = y * -50;
-        item.style.setProperty('--shiftX_move', `${shiftX}px`);
-        item.style.setProperty('--shiftY_move', `${shiftY}px`);
+        item.style.setProperty('--shiftX_move', `${x * -50}px`);
+        item.style.setProperty('--shiftY_move', `${y * -50}px`);
     });
 });
 
+// --- Loading / Partículas ---
 const dotsElement = document.getElementById('dots');
 let dotCount = 0;
 
@@ -153,17 +148,11 @@ document.querySelectorAll('.menu-link').forEach(link => {
         const rect = this.getBoundingClientRect();
         const cx = rect.left + rect.width / 2;
         const cy = rect.top + rect.height / 2;
-
-        // OTIMIZAÇÃO: Reduzido de 120 para 40 partículas
         const particleCount = 40;
         const particles = [];
 
-        // Iniciar tela de loading imediatamente após 1s da explosão
-        setTimeout(() => {
-            startLoadingSequence(url);
-        }, 1000);
+        setTimeout(() => { startLoadingSequence(url); }, 1000);
 
-        // Criar todas as partículas primeiro (mais eficiente)
         for (let i = 0; i < particleCount; i++) {
             const p = document.createElement('div');
             p.className = 'smoke-particle';
@@ -176,37 +165,26 @@ document.querySelectorAll('.menu-link').forEach(link => {
             particles.push(p);
         }
 
-        // Animar todas de uma vez com requestAnimationFrame
         particles.forEach((p, i) => {
             const angle = (Math.PI * 2 * i) / particleCount + Math.random() * 0.5;
             const distance = Math.random() * 800 + 400;
-            const targetX = Math.cos(angle) * distance;
-            const targetY = Math.sin(angle) * distance;
 
-            const tl = gsap.timeline();
-
-            // Fase 1: Explosão (1.2s)
-            tl.to(p, {
-                x: targetX,
-                y: targetY,
-                rotation: Math.random() * 720,
-                scale: Math.random() * 15 + 10,
-                duration: 1.2,
-                ease: "power2.out",
-                delay: Math.random() * 0.05
-            })
-                // Fase 2: Permanência (0.8s) - elementos ficam visíveis
+            gsap.timeline()
                 .to(p, {
-                    duration: 0.8
+                    x: Math.cos(angle) * distance,
+                    y: Math.sin(angle) * distance,
+                    rotation: Math.random() * 720,
+                    scale: Math.random() * 15 + 10,
+                    duration: 1.2,
+                    ease: "power2.out",
+                    delay: Math.random() * 0.05
                 })
-                // Fase 3: Fade out suave (0.6s)
+                .to(p, { duration: 0.8 })
                 .to(p, {
                     opacity: 0,
                     duration: 0.6,
                     ease: "power2.inOut",
-                    onComplete: () => {
-                        p.remove();
-                    }
+                    onComplete: () => p.remove()
                 });
         });
     });
